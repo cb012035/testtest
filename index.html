@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovita Health</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+    <style>
+      /* General styles */
+        .menu {
+          font-size: 25.6px; /* Increase the font size to 40px */
+          margin-right: 20px; /* Adjust margin if needed */
+        }
+        
+        
+        .navbar {
+          display: none;
+          position: absolute;
+          top: 70px;
+          right: 20px; /* Adjusted right position */
+          background-color: #333;
+          padding: 10px;
+          border-radius: 5px;
+        }
+        
+        .navbar.active {
+          display: block;
+        }
+        
+        .navbar ul {
+          list-style-type: none;
+          padding: 0;
+        }
+        
+        .navbar li {
+          margin-bottom: 10px;
+        }
+        
+        .navbar a {
+          color: #fff;
+          text-decoration: none;
+        }
+        
+        .navbar a:hover {
+          text-decoration: underline;
+        }
+        
+        /* Media query for mobile devices */
+        @media screen and (max-width: 350px) {
+          .header {
+            flex-direction: column;
+            align-items: center;
+          }
+          
+          .menu {
+            font-size: 36px; /* Increased font size */
+          }
+        
+          .navbar {
+            top: 60px; /* Adjusted top position */
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            width: 80%;
+          }
+        }
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+        html,body{
+          margin:0;
+          height:120%;
+          font-family: 'Josefin Sans', sans-serif;
+        
+        }
+        a{
+          text-decoration:none
+        }
+        .header{
+          position:relative;
+          overflow:hidden;
+          display:flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: flex-start;
+          align-content: flex-start;
+          height:50vw;
+          min-height:400px;
+          max-height:550px;
+          min-width:300px;
+          color:#eee;
+        }
+        .header:after{
+          content:"";
+          width:100%;
+          height:100%;
+          position:absolute;
+          bottom:0;
+          left:0;
+          z-index:-1;
+         background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+        }
+.header:before {
+    content: "";
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #1B2030 url(https://images.unsplash.com/photo-1571993142257-eae0b44cf0f1?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ) 50% 0 no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    animation: moveBackground 25s linear infinite;
+    z-index: -2;
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+
+
+        .header a{
+          color:#eee
+        }
+      
+        
+          .menu {
+         display:block;
+          width:29px;
+          height:42px;
+          border:2px solid #fff;
+          border-radius:2px;
+          position:absolute;
+          right:12px;
+          top:25px;
+          text-decoration:none
+        }
+        .menu:after{
+          content:"";
+          display:block;
+          width:20px;
+          height:0px;
+          background:#fff;
+          position:absolute;
+          margin:0 auto;
+          top:0px;
+          left:0;
+          right:0;
+          box-shadow:0 8px, 0 16px
+        }
+        /* Media query for mobile devices */
+        @media screen and (max-width: 768px) {
+          .menu {
+            width: 33px; /* Adjusted width for mobile */
+            height: 45px; /* Adjusted height for mobile */
+            font-size: 30px; /* Adjusted font size for mobile */
+            top: 27px; /* Adjusted top position for mobile */
+          }
+          
+          .menu:after {
+            width: 1px; /* Adjusted width for mobile */
+            height: 0px; /* Adjusted height for mobile */
+            top: 8px; /* Adjusted top position for mobile */
+            box-shadow: 0 8px, 0 5px; /* Adjusted box shadow for mobile */
+          }
+        }
+            
+  .logo {
+  border: 2px solid #fff;
+  border-radius: 3px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  margin: 25px;
+  padding: 0px 20px;
+  font-weight: 900;
+  font-size: 1.1em;
+  line-height: 1;
+  box-sizing: border-box;
+  height: 43px;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+  .logo {
+    margin: 25px; /* Adjusted margin for mobile */
+    padding: 20px 7px; /* Adjusted padding for mobile */
+    font-size: 1em; /* Adjusted font size for mobile */
+    height: 45px; /* Adjusted height for mobile */
+  }
+}
+
+
+
+.sides, .info {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.info {
+  width: 100%;
+  padding: 15% 10% 0 10%;
+  text-align: center;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px), (max-width: 429px) {
+  .sides, .info {
+    width: 100%; /* Full width for mobile */
+  }
+  
+  .info {
+    padding: 15% 5% 0 5%; /* Adjusted padding for mobile */
+  }
+}
+
+
+        .author{
+          display:inline-block;
+          width:50px;
+          height:50px;
+          border-radius:50%;
+          background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxESERMQEhIQEhUQDxYQEhEQEBASEBISFhIWFxURFRYaHSghGxslGxUTITEhJSkrLi4uFx8zODMuNygtLi4BCgoKDg0OGxAQGi0lHyYtLS0tLy8tLS0tLS0rLy0tLi0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABgcCBAUDAf/EAEoQAAICAAIFBggKBgkFAAAAAAABAgMEEQUGEiFRBzFBYXGRE1JTcoGhscEiIyQykpOywtHSQmRzgqKzFBY0Q2JjdKPwM1SUw+H/xAAaAQEAAgMBAAAAAAAAAAAAAAAABAUBAwYC/8QANREBAAIBAgEHDAIDAAMAAAAAAAECAwQRBRIhMVFhcZETFSIjMjNBUoGhscEUQtHh8CQ08f/aAAwDAQACEQMRAD8AugAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGtpDH1UQdls1CK6Xzt8Elvb6ke6Y7XnasNeTLTHXlWnaETxXKFWnlXROa4znGvPrySkT6cNtPtW2V1+K1j2a+PM84coi6cM12XJ/cPU8Nn4W+zzHFY+NPu948oVPTRd6JVv2tHnzbf5o+7151p8s/Z7V6/4V88MRHthW/ZM8Tw7L8Jh7jimKemJbMNd8E+edke2qfuTPE6DN1fdsjiODrnwbuF1lwdjUY315vclParbfBbSRqtpcteeattNZhvO0Wh1jQkgAAAAAAAAAAAAAAAAAAAAAADGyainJvJRTk2+ZJLNszEbzsxMxEbyp7T+mJ4q52Sb2VmqodEIdG7i+dv8ABHQ6fBGKm0dPxcxqM85r8qej4Ocb2h8bDG4pJ82/sBHP0PavC2S+bXZLzYTl7EeZvWPjHi98i/VPhLaq0Jipc2HxHppsj7Ua5z4o6bR4tldPlt0VnwZYnQGLri5zw9iiud5J5Li0m2l1sxXU4rTtFmbaXNWN5rOyRag6fmprCWScozT8E283CSWexn4rSeXB7ukh67TRyfKV+qdw/VTyvJWnmnoWCVK6AAAAAAAAAAAAAAAAAAAAAAOTrZNxwWIa8k4/Sai/aSNLG+avejaydsFu5UJ0LmUn1A0fVdfPwsVNV17UYyWcc3JLNrpy95B1+S1KRyZ23WHDsVMmSeVG+0LEho+mPNVSuyqC9xTzkvPTMryMVI6Ijwe8YJcyS7Eked5etoZZmGQABWWOwKq0tCFa2U8VTZFLmSk4ykl1Z7Zd0ycvSzNuqYc/kx8jWRFeuJ/77rNKR0AAAAAAAAAAAAAAAAAAAAAABxddH8hv82P8yBJ0fvqomu9xZUp0Dm0u5NH8otX6v/7IldxH3cd6z4X7y3csYp14AAAACI6UwmemMLLodLk+2tW/jAsMd/8AxLx2/lWZcf8A5tJ7Pxv/AJS4r1mAAAAAAAAAAAAAAAAAAAAAAcLXh/IL+yv+dAlaL39UPX/+vZVBfucSvk2fyua44aX8ysr+I+6jvWPC59dMdiySmXwAAAANO7BbWIqu8nVbD0zlXl6oyNkX2pNeuY/bVbHvki/VE/fZ46R03TS9l7UpdMYJNrtbaS7DFaTLRqNdiwztPPPVDLRumKr3lHOMss9iaSllxWTaYtSas6fWY8/NXmnql0DwlgAAAAAAAAAAAAAAADWnpGhbndSu22C957jHeeiJ8HictI/tHi8npnCrnxGH+vq/E9eRyfLPg8TqMUf2jxYvTmE/7nDfXV/iP4+X5Z8GP5OH548XB1103hp4SyqF1dk7JQUY1zU3usjJt5cyyiyXo8GSMsWmJiIQ9dqMVsM1raJmdlclyo0p5N4v+lyfDDTz+srIHEfdR3rDhkeu37J/SyylX4AAAYXXRhFynJRS6ZPJGYjd4vetI3tO0IxpbWRyzhTnFczse6T81dHbz9hurj61NquJzb0cXN2o82bVR0vfAWuNtcluysi/Rnv9WZi0bw24LTXJW0dcLEIjrgAAAAAAAAAAAAAGhpvSsMLU7Z79+zCCeTnN80V3N59CTNuHDbLbkw0589cNOVP/ANVXpjTl+Jk3ZN7Oe6qLariuGXT2vNl7i0+PFHoxz9bnc2pyZZ3tPN1fBzUjej7AZfQAACxeTrRTrqliJLJ35KCfk45/C/eb7kuJTcQzRa0Uj4flecMwTWs5J+PR3JVfiYQ+fOEPOko+0gREz0J98tKe1MQ0rNPYaP8AeZ+bGcvWkevJ2RrcQ09f7eDVt1ooXNGyX7sUvWzPkpabcVwx0RMufitabHurhGHXJub9y9p7jFHxRMnFbz7EbfdxcTip2PanKUn1vcuxcy9BsiIjoV2TLfJO953eJlrAPsXvXaGa9MLIvtUU21J+ZCc33RTZEiN52dhNto3cXF61U189eL/8ayH29kk00l7fGPGEW+tpX4W8JNF63YS+ShGbhKW6MbVs7T4KWbjn1Z5jJo8uON5jm7DFrsOSdonae13SKmAAAAAAAAAABW/KPi3LEwq/RqqTy/xTebfcoFzw6kRjm3XKi4neZyxXqj8ok2WCtdynVLGyipKlpSWa2p1xll1pyzXpIs6zDE7bpddDnmN+S+vU/HeQ/wB2n8xj+bh6/wAs/wADP8v3h8/qjjvIP6yn8xn+bg+b8sfwc/y/hlDU/HN5eBy65WVZeqRidbhj4sxoM8/1+8OxgtUqsOldjJxnl82ivNxk+Dby2uzcuLZFy66b+jjjbtb40mPBHLzzv2Q2cfp+6zdF+CjzKMPnZdcvwyIkY4jpR8/EMuTmr6MdjlN5vN72+dvnZ7QJmZ55fAPoHwDOutyezFOT4RTb7kOhmtZtO1Y3drAatWTydj8GuG5zfuXp7jVbLEdCywcMyX58nNH3cfEwUZziuaM5RWfPkpNI2R0K7JEVvMR1sao5yiuMku9mZKRvaI7VkshuxMwIdr/oOuVMsVGKjOtrbySSsg2o/C61mt/DPqLHQ57RfkTPNKr4jpqzTykRzw3NQ9Kyvw7hNuU6JKDk3m5Qazg317pL90167DGPJvHRLbw/NOTHtbphJSEngAAAAAAAACruUGOWNl11Vv1Ne4vNBPqfrLnuJe/+kOBhY52QXGyK75Il39me6UOntx3x+V4s5h1r4AAwvtUIynLcoxcn2IzEbvN7xSs2nohX+kMbK6xzl07ox8WPRFEqteTGzlM+a2a/Kn6OjgdW7Zram1Un4yzn9Ho9LPFskR0JeDhuW8b25o+7q16rUr507JemMV7Dx5WU6vCcUdMzL1/q1h+E/pmPK2bPNmDt8Rat4fhP6bHlbHmzT9U+L2q0Fho/3afnSlL1N5GPKWbK6DT1/r4t+qqMVlGMYrhFJL1HiZ3Sq0rSNqxszD0ra2ecpS8aTfe8yZDjrzvaZ7Wxomvavqj/AJkX6E836kzzbolt0teVmrHasEiusAOBr1Zlgbet1x77YkvRRvmj6/hC4hO2nt9Pyj3JjP4zER411y+jKS+8S+JR6NZ70LhU+leOyP2sAqV0AAAAAAAAAK05R4ZYuL44eHqnYi64dPqp71BxOPXb9iP6LjnfQuOIqXfZEl5fYt3ShYveV74/K6zmnWAADia23ZUKPlLEn2LOXtSNmKOdW8UvycO3XLW1W0YsvDzWbb+LT6Etzn258x6yW+DRw3Sxt5W30/ykhpXIBw8ZrTh4z8FW54ixvJV4eO28/O+b279xJrpMkxyrc0dcol9bji3Jr6U9UOjgZ3SW1bCFWfNXGTsmvOnuWfUk+003ikc1Z3b8c3mN7Rt2Ns8NgBraTv2KbJ8IPLtayXraM1jeWnUX5GK1uxXhLck7WqdG1ftdFcG/TL4K9W13GvLPMseF4+Vm5XVCZEd0QBGOUSeWDy8a+C7lKXuJvD49d9JV/Ep9T9YRzk3syxc4+Nhpd6nX+LJvEY9VE9qDwyfXTHZ/hZRSr4AAAAAAAAAV5ymQ+Pplxpa7pv8AMW/DZ9C0dqk4pHp17ke1dhni8Ov1iD7pJ+4maidsVu5C00b5qx2rkOcdQAAI/rfW5RqS6bdldslu9htxfFVcVrNq0iOvbxd2mpQjGC5oxUV2JZGuZ3WdKxSsVj4NTTGlasNX4S15LmjFb5zl4sV/zI2YsNstuTVrz56Ya8qyA2Y/GaUt8DD4urnlGLfg4Q8ax883wXTwW9lrGPFpa8qeef8AuhTTlz6y/IrzR/3SnOg9B04WGzWs5NfDslltz7X0LqRV5s98s728Fvp9NTDG1enrdM0pAAAjmt+NyjGhPe3tz6kvmr0vf6Ddir8VPxXPtEYo75RY3KRNNWMH4OnafzrXtvzf0V7X6SPkneXR8NweTxcqemef/DsGtYAEQ5TJ/J6lxxGfdXP8Sw4dHrJ7lZxSfV1jtRzUCeWNgvGrsj/Dn90ma+N8M98IPDp9fHdK0ijdCAAAAAAAAAIHynw34aXVbH+W17y14bPtR3ftT8VjnpPf+ke1QjnjsOv8xv6Ncpe4l6ufU2QdHz6inf8AqVunPumAAGtjsL4RQ/wXQsX7st/qbPVZ2ac2LykR2TE+D0xeJjVCVk3lGuLlJ9SXtFazaYrHS2XvFKza3RCpNJ4+3HYhPJ5zkq6q890E3uj72y/x464Mf5c1ly31GXv5oj/vutDQWiYYWmNUN755zy3zn0yfuXQsijz5py35Uug0+CuGnJj6ugam8AAcrS+m4U5xWU7PFT3R65P3c57rSZQdVrqYY2jnt/3Shl90pyc5POUnm2SIjZzl72vabW6ZdDQOi3dPNr4uD+E+L8Re/q9B5vbkwl6LSzmvvPsx0/4TgjOmAAEJ5T5fAw8eM5y7oxX3iz4bHpWlU8Vn0ax2o1qZPLHUdcpLvqmibrI3w2QNFO2ev/fBbZz7pQAAAAAAAABDuU2v4imXi3uPZtQk/uljw2fTmOxV8Vj1dZ7f0jWoqX9Oqz6FZl1vwU93dmTddv5GfogaDby9d+38LWKF0YAAAQrlJ0jlCvDJ/wDUfhZ+bF5RXplm/wBwsuHYt7TefgqeKZdqxjj488uZycYJTxE7n/cV5Lz7M0n9FT7zfxHJtSK9f6aOGY+Vkm0/CPysgpl6xssUVnJqK4yaS9YebWrXnmXMxesOHhzSdj4VrNfSe42RjmULLxHBToneexwNIaw22bo/Fx4Rfwn2y/DI2VxxCrz8Ry5OavNH3cmEW3kk23zJJtv0GxAiJmdodvRurdk8pW/Fx8Xd4R/h6e412yRHQstPwy9+fJzR90prhXVFQWzCK5lml7ec0c8868pWmOvJrzQzV0fGj9JDaXvlR1sk11GNpN4fcgyr3lLxUZW01JpyqjNzS/R23DJPr+C93YW/DqTFbWn4qTil4m9ax8HB1WfyzD5eWj/99WZL1XubdyHpPf071wHOunAAAAAAAAAGjpvRscTROmTy2lnGXizTzjLv9WZtw5ZxXi0NOfDGXHNJVJicPdhbkpKVdlctqLXU904vma/4+Bf1tTNTm54lzVq3w32nmmP+5kpwvKFYklZRCb6ZQscM+vZaftINuG1/rZY04raI9Kreq5Q6P06bo+a65L1tGqeG5PhMNscVx/Gs/Z1sDrXhrctnw+/9Xun64RkiPfSZKdO3jCVj1uK/Rv4S7cZZrPfv4pp9z3kZLiVUa64nwmNt4V7NS7IxWa+k5F/oq8nDHbzub11+Vnt2cyUcmdWWHtl41+z6I1x/MyBxGd8kR2LDhddsdp7f0leIw8ZrKW1l/hnOD74tECJ2WOTHW8bT+dnIv1Ypk89u1PrlGXtWZ7jLMIF+F47TvvP5/LzWqlflLO6H4GfKy1+acfzT9mxTq1h1zqc/Om19nIx5WzdThmCOnefq6eHwtdayhCMfNSWfa+k8TMz0pmPFTHHoxEIJrTrlNylThpbMYvZlcvnTfSoPoj1876Ou10uijblZPBU6viFpmaYujr/whdsnJ7Um5N88pNyk+1ssoiI5oVVvSneedjsLgu5Gd2OTD6orgGY5uhnGyS5pSXY2jzyY6meVbrYnphLuTzRMp3f0mS+BTmoN/pWNZPLsTfpa6yu4hmiK+Tjpn8LLhuCbX8pPRHR3rGKdegAAAAAAAAAB4YzB1Wx2ba4WLhOKkl1rPmPVL2pO9Z2eL46Xja0bufDVjBLesPX6dqS7m8jdOqzT/aWiNFgj+kN6jR1EPmU0w82uC9iNU5L26ZluripXorDZPDYICkcddt22T8e2c/pTb9502ONqRHZDk8k73me2Vj8nS+R9t8/ZEpuIe++kLzhvuPrKTkJYAAABxdcca6cHbKLylJKqLXOtt5Nrr2dok6THF8sRPf4ImtyTjwzMd3iqQ6Bzbd0Xou7ETcKYbTSze9RjFcW2asuamKN7S24sN8s7Uh146kY3xal22r3Ef+fh7fBJ825+zxekdRMZxw67bJ+6Jjzhi7WfNmfs8XrHUDE9NmHX71j+6eZ4jj6pe44Xl64dLR3J/BPO+1zS/QrTgn1OTeeXZl2mjJxGZjakbN+LhcRO+S2/cmVFMYRUIRUYxWUYxWSS4JFda02neVpWsVjaI5noYegAAAAAAAAAAAAAADC6WUZPhFvuRmOli3RKjIcy7DqHIRO8LM5OJ54SS8XETX8EH7yk4hHrfov+GT6nbtSogrEAAAIvyiv5Gv28PZIncP8AffSVfxP3P1hWZdqBNuTB/DxPm1e2wrOJdFfr+lrwr2r/AE/afFSugAAAAAAAAAAAAAAAAAAAAHhj3lVY+FU3/Cz1T2oeMk7VnuUjHmXYdPLko5oWJyZT+Iujwvz764r7pT8Sj06937XnCp9Xbv8A1CYlctAAAAi/KN/Y1/qIfZmTuH+9+iv4l7n6qzLtQJpyYP4zEfs6/tTKziXs1+v6WvCvav3R+1gFSugAAAAAAAAAAAAAAAAAAAAGrpV/EXfsLPsM94/bjvhry+7t3SpRHTOThPOTCe7Ex4OqXf4Re4quJR7M9644VPtx3ftOSrXAAAARblG/si/1EPszJ3D/AHv0V/E/c/VWhdqBM+TH/q3/ALOH2pFZxL2a/VacK9u3dH7WCVK7AAAAAAAAAAAAAAAAAAAAAeWKq24Th48JQ+lFr3maztMS83jeswpBxa+C1k4vJrg1ua7zp4nfnhyW0xzS6mr2nJ4SyU4xjNTjszhJtZ5PNNPoa38edmjUaeM1dpnZI02ptgtvEb7pC+USfRhoem6T+4RPNsfN9v8Aab51t8keP+mL5QrfIVfWTfuM+ba/NPgx51v8keP+mD5Qb/I099j94820+aWPOmT5YYvlAxPksP3WfmM+bsfXJ50ydUOXp3Wa/FRjXNVxjGW3lWpLOWTSbbb6Gzfg0lMU7x0o2o1mTNHJtts4pKRU65McM/j7eh7FS7VnKX2od5VcSt7Nfqt+FU9q3dCdFWuAAAAAAAAAAAAAAAAAAAAAACA67asT25YqiLkpfCtris5Rl02RXSn0rjv6d1ro9XG3k7/SVNrtHblTkpHfCEFoqX0AB8A+gAN3ROircTYq6o5+NJ/MgvGk/dzs1Zc1cVd7NuHDfLbk1j/S29EaOhh6YUw5oLe3zyk98pPtZz+XLOS82l0uHDXFSKVbhrbQAAAAAAAAAAAAAAAAAAAAAABzsboLC3PasorlJ88ktmT7ZRybN1NRlpG1bS0ZNLivO9qxu03qfgfIf7t35jZ/NzfN+Gr+Bg+X7ywepeA8i/rr/wAxn+dn6/tDHm7T/L95/wAvj1KwPkpfXXfmH87P1/aGPN2n6vvP+Xz+pOB8nP6638xn+fn6/tB5u0/VPjLOrUzAxefgm+qVtrXdtGJ12afj9oZjh+nj+v3l2sNhoVxUK4RhFc0YRUY9yI1rTad7Tul0pWkbVjaHqeXoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//9k=) center no-repeat;
+          background-size:cover;
+          box-shadow:0 2px 3px rgba(0,0,0,0.3);
+          margin-bottom:3px
+        }
+        .info h4, .meta{
+          font-size:0.7em
+        }
+        .meta{
+          font-style:italic;
+        }
+       
+        /* Base styles */
+           .achievements { 
+        
+              display: flex; 
+        
+              justify-content: space-around; 
+        
+              align-items: center; 
+        
+              padding: 40px 80px; 
+        
+            } 
+        
+         
+        
+            .achievements .work { 
+        
+              display: flex; 
+        
+              flex-direction: column; 
+        
+              justify-content: center; 
+        
+              align-items: center; 
+        
+              padding: 0 40px; 
+        
+            } 
+        
+         
+        
+            .achievements .work i { 
+        
+              width: fit-content; 
+        
+              font-size: 50px; 
+        
+              color: #333333; 
+        
+              border-radius: 50%; 
+        
+              border: 2px solid #333333; 
+        
+              padding: 12px; 
+        
+            } 
+        
+         
+        
+            .achievements .work .work-heading { 
+        
+              font-size: 20px; 
+        
+              color: #333333; 
+        
+              text-transform: uppercase; 
+        
+              margin: 10px 0; 
+        
+            } 
+        
+         
+        
+            .achievements .work .work-text { 
+        
+              font-size: 15px; 
+        
+              color: #585858; 
+        
+              margin: 10px 0; 
+        
+            } 
+        
+        .logo1 {
+          width: 250px;
+          height: 250px;
+        }
+        
+        .logo2 {
+          width: 190px;
+          height: 210px;
+        }
+        
+        .logo3 {
+          width: 280px;
+          height: 230px;
+        }
+        
+        /* Media queries for mobile devices */
+        @media only screen and (max-width: 925px) {
+          .achievements {
+            flex-direction: column;
+            padding: 10px;
+          }
+        
+          .achievements .work {
+            margin-bottom: 10px;
+          }
+        
+          .achievements .work i {
+            font-size: 24px;
+          }
+        
+          .achievements .work .work-heading {
+            font-size: 14px;
+          }
+        
+          .achievements .work .work-text {
+            font-size: 15px;
+          }
+  
+
+.logo1 {
+  width: 170px;
+  height: 145px;
+  background-image: url('logo1.png'); /* Replace 'logo1.png' with the path to your first logo image */
+  /* Additional styling if needed */
+}
+
+.logo2 {
+  width: 125px;
+  height: 125px;
+  background-image: url('logo2.png'); /* Replace 'logo2.png' with the path to your second logo image */
+  /* Additional styling if needed */
+}
+
+.logo3 {
+  width: 170px;
+  height: 125px;
+  background-image: url('logo3.png'); /* Replace 'logo3.png' with the path to your third logo image */
+  /* Additional styling if needed */
+}
+
+
+        }
+        
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: "Poppins", sans-serif;
+        }
+        
+          
+        
+         .about-me { 
+        
+        display: flex; 
+        
+        justify-content: center; 
+        
+        align-items: center; 
+        
+        padding: 40px 80px; 
+        
+        border-top: 2px solid #eeeeee; 
+        
+        } 
+        
+        
+        .about-me img {
+            width: 400px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-right: auto;
+        }
+        
+        
+         
+        
+            .about-me-text h2 { 
+        
+              font-size: 30px; 
+        
+              color: #333333; 
+        
+              text-transform: uppercase; 
+        
+              margin: auto; 
+        
+            } 
+        
+         
+        
+            .about-me-text p { 
+        
+              font-size: 15px; 
+        
+              color: #585858; 
+        
+              margin: 10px 30px; 
+        
+            } 
+        
+        /* Media queries for mobile devices */
+        @media only screen and (max-width: 768px) {
+          .about-me {
+            flex-direction: column;
+            padding: 10px;
+          }
+        
+          .about-me img {
+            width: 200px;
+            margin: 0;
+          }
+        
+          .about-me-text {
+            text-align: center;
+            margin-top: 20px;
+          }
+        
+          .about-me-text h2 {
+            font-size: 20px;
+          }
+        
+          .about-me-text p {
+            font-size: 15px;
+          }
+        }
+        
+        
+         .footer-clean {
+          padding:50px 0;
+          background-color:#fff;
+          color:#4b4c4d;
+        }
+        
+        .footer-clean h3 {
+          margin-top:0;
+          margin-bottom:12px;
+          font-weight:bold;
+          font-size:16px;
+        }
+        
+        .footer-clean ul {
+          padding:0;
+          list-style:none;
+          line-height:1.6;
+          font-size:14px;
+          margin-bottom:0;
+        }
+        
+        .footer-clean ul a {
+          color:inherit;
+          text-decoration:none;
+          opacity:0.8;
+        }
+        
+        .footer-clean ul a:hover {
+          opacity:1;
+        }
+        
+        .footer-clean .item.social {
+          text-align:right;
+        }
+        
+        @media (max-width:767px) {
+          .footer-clean .item {
+            text-align:center;
+            padding-bottom:20px;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .footer-clean .item.social {
+            text-align:center;
+          }
+        }
+        
+        .footer-clean .item.social > a {
+          font-size:24px;
+          width:40px;
+          height:40px;
+          line-height:40px;
+          display:inline-block;
+          text-align:center;
+          border-radius:50%;
+          border:1px solid #ccc;
+          margin-left:10px;
+          margin-top:22px;
+          color:inherit;
+          opacity:0.75;
+        }
+        
+        .footer-clean .item.social > a:hover {
+          opacity:0.9;
+        }
+        
+        @media (max-width:991px) {
+          .footer-clean .item.social > a {
+            margin-top:40px;
+          }
+        }
+        
+        @media (max-width:767px) {
+          .footer-clean .item.social > a {
+            margin-top:10px;
+          }
+        }
+        
+        .footer-clean .copyright {
+          margin-top:14px;
+          margin-bottom:0;
+          font-size:13px;
+          opacity:0.6;
+        }
+          .logon {
+                    float: left;
+                    margin-right: 1090px;
+                    width: 200px; /* Adjust the width as needed */
+        
+        
+        
+         
+           
+            } 
+        
+        .content{  
+          padding:5% 10%;
+          text-align:justify
+        }
+        .btn{
+          color:#333;
+          border:2px solid;
+          border-radius:3px;
+          text-decoration:none;
+          display:inline-block;
+          padding:5px 10px;
+          font-weight:600
+        }
+   
+
+
+  .twtr {
+    margin-top: 100px;
+}
+ }.btn.twtr:after{content:"\1F426";padding-left:5px}
+        position: relative;
+          width: 100%;
+      
+    
+        
+    
+
+        
+
+        .social-icon,
+        .menu {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 10px 0;
+          flex-wrap: wrap;
+        }
+        
+        .social-icon__item,
+        .menu__item {
+          list-style: none;
+        }
+        
+        .social-icon__link {
+          font-size: 2rem;
+          color: #fff;
+          margin: 0 10px;
+          display: inline-block;
+          transition: 0.5s;
+        }
+        .social-icon__link:hover {
+          transform: translateY(-10px);
+        }
+        
+        .menu__link {
+          font-size: 1.2rem;
+          color: #fff;
+          margin: 0 10px;
+          display: inline-block;
+          transition: 0.5s;
+          text-decoration: none;
+          opacity: 0.75;
+          font-weight: 300;
+        }
+        
+        .menu__link:hover {
+          opacity: 1;
+        }
+        
+        
+        
+        
+        </style>
+  
+  <div class="header">
+    <div class="sides">
+      <a href="https://www.sgu.edu/blog/medical/top-medical-blogs/" class="logo">BLOG</a>
+    </div>
+  <div class="sides">
+    <a href="#" class="menu" id="menuBtn">&#9776;</a>
+  </div>
+ <div class="info">
+
+            <h1>INNOVITA HEALTH</h1>
+            <div class="meta">
+                <a href="https://twitter.com/romeledward17" target="_b" class="author"></a><br>
+                By <a href="https://twitter.com/romeledward17" target="b">Innovita Health</a> on March 22, 2024
+                <p>Experience the Future of Healthcare with Innovita Health, where imagination and groundbreaking innovations intersect, transforming the way health is delivered for a better, healthier world</p>
+            </div>
+        </div>
+    </div>
+<nav class="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+<div class="achievements">
+
+        <div class="work">
+            <img src="project1.png" alt="Projects Logo" class="logo1">
+            <i class="fas fa-atom"></i>
+            <p class="work-heading">Projects</p>
+            <p class="work-text">As a company, We have always believed in the power of innovation, design, and user experience to create groundbreaking products that transform industries. In this pharmaceutical company project, I'm excited to apply my expertise and passion to develop solutions that make a real difference in healthcare, while continuously seeking new challenges to push the boundaries of what's possible.</p>
+        </div>
+
+        <div class="work">
+            <img src="project7.png"Skills Logo" class="logo2">
+            <i class="fas fa-skiing"></i>
+            <p class="work-heading">Skills</p>
+            <p class="work-text">At Innovita Health, our commitment to innovation, design, and user experience is exemplified in the pharmaceutical sector as we've leveraged our expertise in programming, design, and visionary leadership to develop cutting-edge solutions that revolutionize healthcare. We are dedicated to continually seeking new ways to advance our skills and push the boundaries, ensuring that our contributions remain at the forefront of the industry and positively impacting the lives of patients around the world.</p>
+        </div>
+
+        <div class="work">
+            <img src="project5.png"Network Logo" class="logo3">
+            <i class="fas fa-ethernet"></i>
+            <p class="work-heading">Network</p>
+            <p class="work-text">At Innovita Health, we harness our extensive network and strong relationships within the pharmaceutical sector, combined with our commitment to innovation and user experience, to deliver groundbreaking solutions that revolutionize healthcare and solidify our position as a leader in the tech industry.</p>
+        </div>
+
+    </div>
+
+    <div class="about-me">
+        <div class="about-me-text">
+            <h2>About Me</h2>
+           <p> Greetings,</p>
+
+            <p>I am Romel Edward Bellana, a driven and dedicated Computer Science student with a profound specialization in cloud computing. My passion lies in leveraging technology, particularly Artificial Intelligence, to revolutionize healthcare. With a robust foundation in cloud platforms and programming, I am committed to pioneering data-driven solutions within the pharmaceutical sector.</p>
+            
+          <p>Throughout my academic career, I have actively developed my technical skills, developing a thorough understanding of the latest technologies. My current focus is on improving my knowledge of cloud-based technology to address real-world healthcare challenges.</p>
+          <p> Presently, I am actively pursuing opportunities to contribute my skills and knowledge as an intern in a reputable pharmaceutical company. I am driven by the ambition to ascend the ranks within the industry, ultimately seeking a leadership role where I can steer the integration of technology to redefine healthcare paradigms.</p>
+          
+          <p> Thank you for visiting my page. I look forward to connecting and collaborating on transformative projects that shape the future of healthcare.</p>
+            
+        <p>Warm regards,</p>
+      <p>  Romel Edward Bellana</p>
+      </div>
+        <img src="https://i.pinimg.com/564x/17/df/a9/17dfa916f8e4ca133dbbf0b4fbf76c3c.jpg" alt="me">
+    </div>
+
+    <div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Quality</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Legacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Careers</h3>
+                        <ul>
+                            <li><a href="#">Job openings</a></li>
+                            <li><a href="#">Employee success</a></li>
+                            <li><a href="#">Benefits</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social">
+                        <a href="#"><i class="icon ion-social-facebook"></i></a>
+                        <a href="#"><i class="icon ion-social-twitter"></i></a>
+                        <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                        <a href="#"><i class="icon ion-social-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <footer>
+              <div style="text-align: center;">
+                  <p style="font-size: 14px; margin-bottom: 5px;">&copy; 2024 Innovita Healthcare. All rights reserved.</p>
+              </div>
+          </footer>
+          
+    </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var menuBtn = document.getElementById('menuBtn');
+    var navbar = document.querySelector('.navbar');
+  
+    menuBtn.addEventListener('click', function() {
+      navbar.classList.toggle('active');
+    });
+  });
+  
+  </script>
+
+  
+</body>
+</html>
